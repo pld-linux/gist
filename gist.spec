@@ -9,7 +9,7 @@ Release:	0.1
 License:	MIT
 Source0:	http://github.com/defunkt/gist/tarball/v%{version}
 # Source0-md5:	e0b9eb913c46ad49e5d6072c420b2a17
-Group:		Development/Languages
+Group:		Applications
 URL:		http://github.com/defunkt/gist
 BuildRequires:	rpmbuild(macros) >= 1.484
 BuildRequires:	ruby >= 1:1.8.6
@@ -25,7 +25,7 @@ Command-line interface for <gists.github.com>.
 %setup -qc
 mv defunkt-%{name}-%{commit}/* .
 
-# fix #!/usr/bin/env ruby -> #!/usr/bin/ruyu:
+# fix #!/usr/bin/env ruby -> #!/usr/bin/ruby:
 %{__sed} -i -e '1s,^#!.*ruby,#!%{__ruby},' %{name}
 
 %install
