@@ -1,6 +1,4 @@
-# TODO:
-# - /usr/bin/gist:86: command not found: pbcopy
-#   which: no pbcopy in (/usr/local/bin:/usr/bin:/bin:/home/users/z/bin)
+
 %define		commit	2c90f46
 Summary:	Command-line interface for gists.github.com
 Name:		gist
