@@ -1,5 +1,3 @@
-
-%define		commit	2c90f46
 Summary:	Command-line interface for gists.github.com
 Name:		gist
 Version:	1.0.3
@@ -21,7 +19,7 @@ Command-line interface for <gists.github.com>.
 
 %prep
 %setup -qc
-mv defunkt-%{name}-%{commit}/* .
+mv defunkt-%{name}-*/* .
 
 # fix #!/usr/bin/env ruby -> #!/usr/bin/ruby:
 %{__sed} -i -e '1s,^#!.*ruby,#!%{__ruby},' %{name}
