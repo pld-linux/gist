@@ -5,6 +5,7 @@ Release:	2
 License:	MIT
 Source0:	http://github.com/defunkt/gist/tarball/v%{version}
 # Source0-md5:	e0b9eb913c46ad49e5d6072c420b2a17
+Patch0:		stop-bashism.patch
 Group:		Applications
 URL:		http://github.com/defunkt/gist
 BuildRequires:	rpmbuild(macros) >= 1.484
@@ -23,6 +24,7 @@ Command-line interface for <gists.github.com>.
 %prep
 %setup -qc
 mv defunkt-%{name}-*/* .
+%patch0 -p1
 
 # fix #!/usr/bin/env ruby -> #!/usr/bin/ruby:
 %{__sed} -i -e '1s,^#!.*ruby,#!%{__ruby},' %{name}
