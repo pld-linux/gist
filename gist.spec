@@ -26,15 +26,16 @@ Command-line interface for <gists.github.com>.
 mv defunkt-%{name}-*/* .
 %patch0 -p1
 
-# fix #!/usr/bin/env ruby -> #!/usr/bin/ruby:
+# fix #!%{_bindir}/env ruby -> #!%{_bindir}/ruby:
 %{__sed} -i -e '1s,^#!.*ruby,#!%{__ruby},' %{name}
+
+awk '{if (p) print} /^__END__$/ {p = 1}' %{name} > %{name}.1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install -p %{name} $RPM_BUILD_ROOT%{_bindir}
-
-awk '{if (p) print} /^__END__$/ {p = 1}' %{name} > $RPM_BUILD_ROOT%{_mandir}/man1/%{name}.1
+cp -a %{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1/%{name}.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
