@@ -11,6 +11,9 @@ BuildRequires:	rpmbuild(macros) >= 1.484
 BuildRequires:	ruby >= 1:1.8.6
 BuildRequires:	ruby-modules
 %{?ruby_mod_ver_requires_eq}
+Requires:	git-core
+Requires:	groff
+Requires:	xclip
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,8 +29,10 @@ mv defunkt-%{name}-*/* .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install -p %{name} $RPM_BUILD_ROOT%{_bindir}
+
+awk '{if (p) print} /^__END__$/ {p = 1}' %{name} > $RPM_BUILD_ROOT%{_mandir}/man1/%{name}.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -36,3 +41,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.markdown
 %attr(755,root,root) %{_bindir}/gist
+%{_mandir}/man1/%{name}.1*
