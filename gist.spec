@@ -1,7 +1,7 @@
 Summary:	Command-line interface for gists.github.com
 Name:		gist
 Version:	1.0.3
-Release:	2
+Release:	3
 License:	MIT
 Source0:	http://github.com/defunkt/gist/tarball/v%{version}
 # Source0-md5:	e0b9eb913c46ad49e5d6072c420b2a17
@@ -15,7 +15,7 @@ BuildRequires:	sed >= 4.0
 %{?ruby_mod_ver_requires_eq}
 Requires:	git-core
 Requires:	groff
-Requires:	xclip
+Suggests:	xclip
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
