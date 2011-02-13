@@ -1,11 +1,10 @@
 Summary:	Command-line interface for gists.github.com
 Name:		gist
-Version:	1.0.3
-Release:	3
+Version:	2.0.0
+Release:	1
 License:	MIT
 Source0:	http://github.com/defunkt/gist/tarball/v%{version}
-# Source0-md5:	e0b9eb913c46ad49e5d6072c420b2a17
-Patch0:		stop-bashism.patch
+# Source0-md5:	4be2158b5a3d570f0f14d3ba092458db
 Group:		Applications
 URL:		http://github.com/defunkt/gist
 BuildRequires:	rpmbuild(macros) >= 1.484
@@ -25,7 +24,6 @@ Command-line interface for <gists.github.com>.
 %prep
 %setup -qc
 mv defunkt-%{name}-*/* .
-%patch0 -p1
 
 # fix #!%{_bindir}/env ruby -> #!%{_bindir}/ruby:
 %{__sed} -i -e '1s,^#!.*ruby,#!%{__ruby},' %{name}
