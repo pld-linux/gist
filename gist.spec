@@ -1,12 +1,12 @@
 Summary:	Command-line interface for gists.github.com
 Name:		gist
-Version:	2.0.0
+Version:	2.0.3
 Release:	1
 License:	MIT
 Source0:	http://github.com/defunkt/gist/tarball/v%{version}
-# Source0-md5:	4be2158b5a3d570f0f14d3ba092458db
+# Source0-md5:	0b99159635df2083651d2ff9db8abb25
 Group:		Applications
-URL:		http://github.com/defunkt/gist
+URL:		http://defunkt.io/gist/
 BuildRequires:	rpmbuild(macros) >= 1.484
 BuildRequires:	ruby >= 1:1.8.6
 BuildRequires:	ruby-modules
@@ -38,7 +38,7 @@ mv defunkt-%{name}-*/* .
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install -p %{name} $RPM_BUILD_ROOT%{_bindir}
-cp -a %{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1/%{name}.1
+cp -p %{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1/%{name}.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
