@@ -1,10 +1,10 @@
 Summary:	Command-line interface for gists.github.com
 Name:		gist
-Version:	2.0.3
+Version:	3.1.0
 Release:	1
 License:	MIT
 Source0:	http://github.com/defunkt/gist/tarball/v%{version}
-# Source0-md5:	0b99159635df2083651d2ff9db8abb25
+# Source0-md5:	fde73d0653ff9bf07f0b9e2f72090f20
 Group:		Applications
 URL:		http://defunkt.io/gist/
 BuildRequires:	rpmbuild(macros) >= 1.484
