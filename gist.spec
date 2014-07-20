@@ -1,7 +1,7 @@
 Summary:	Command-line interface for gists.github.com
 Name:		gist
 Version:	3.1.0
-Release:	1
+Release:	2
 License:	MIT
 Source0:	http://github.com/defunkt/gist/tarball/v%{version}
 # Source0-md5:	fde73d0653ff9bf07f0b9e2f72090f20
